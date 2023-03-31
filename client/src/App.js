@@ -1,5 +1,10 @@
 // * DEPENDS
 import React from 'react';
+import {Routes, Route } from 'react-router-dom';
+
+// * comps
+import Login from './Components/Login';
+import Nav from './Components/Nav';
 
 // * CSS 
 import './CSS/App.css';
@@ -7,7 +12,10 @@ import './CSS/App.css';
 function App() {
   return (
     <div className="App">
-      i am the app!!!!!!!!
+      <Nav />
+      <Routes>
+        <Route exact path="/" element={<Login />} />
+      </Routes>
     </div>
   );
 }

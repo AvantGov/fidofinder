@@ -50,3 +50,17 @@ table {
 Html{
 	font-size: 62.5%;
 }
+
+.App {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background: rgb(98,150,164);
+	background: -moz-linear-gradient(135deg, rgba(98,150,164,1) 0%, rgba(173,135,166,1) 100%);
+	background: -webkit-linear-gradient(135deg, rgba(98,150,164,1) 0%, rgba(173,135,166,1) 100%);
+	background: linear-gradient(135deg, rgba(98,150,164,1) 0%, rgba(173,135,166,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6296a4",endColorstr="#ad87a6",GradientType=1);
+}

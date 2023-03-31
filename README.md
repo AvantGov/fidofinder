@@ -5,11 +5,13 @@
 
 # Color Theme
 ------------------
-#005F79
+#AD87A6
 #6296A4
-#87573F
+#73757F
 #1E2329
 #FFFFFF
+#D86C64
+#dadada
 
 ### UI Colors: 
 Success: #008800
