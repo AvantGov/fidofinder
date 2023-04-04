@@ -1,0 +1,26 @@
+.Loading {
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes spin {
+    from {
+       transform: rotate(0deg); 
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.Loading__element {
+    width: 250px;
+    height: 250px;
+    border: 3px solid transparent;
+    box-shadow: 4px 2px 15px 7px #DADADA;
+    border-radius: 50%;
+    animation: spin 1s linear 0s infinite;
+    margin: 7% 0 7% 0;
+}
