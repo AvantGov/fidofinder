@@ -13,6 +13,7 @@ import LogoutButton from './Components/LogoutButton';
 import Account from './Components/Account';
 import FavoriteList from './Components/FavoriteList';
 import Filter from './Components/Filter';
+import SortButton from './Components/SortButton';
 
 // * CSS 
 import './CSS/App.css';
@@ -34,6 +35,7 @@ function App() {
         <Route exact path='/browse' element={
           <ProtectedRoute status={status}>
             <LogoutButton />
+            <SortButton />
             <Browse />
           </ProtectedRoute>
         }/>
@@ -46,6 +48,7 @@ function App() {
         <Route exact path='/account/favorites' element={
           <ProtectedRoute status={status}>
             <LogoutButton />
+            <SortButton />
             <FavoriteList />
           </ProtectedRoute>
         }/>
