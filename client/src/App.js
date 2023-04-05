@@ -12,14 +12,19 @@ import ProtectedRoute from './utils/comps/ProtectedRoute';
 import LogoutButton from './Components/LogoutButton';
 import Account from './Components/Account';
 import FavoriteList from './Components/FavoriteList';
+import Filter from './Components/Filter';
 
 // * CSS 
 import './CSS/App.css';
 
 
 
+
+
 function App() {
   var status = useSelector(state => {return state.session.status})
+
+
 
   return (
     <div className="App">
@@ -42,6 +47,12 @@ function App() {
           <ProtectedRoute status={status}>
             <LogoutButton />
             <FavoriteList />
+          </ProtectedRoute>
+        }/>
+        <Route exact path='/filter' element={
+          <ProtectedRoute status={status}>
+            <LogoutButton />
+            <Filter />
           </ProtectedRoute>
         }/>
         <Route path="*" element={<p>There's nothing here: 404!</p>} />

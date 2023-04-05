@@ -8,7 +8,7 @@ import axios from "axios";
 
 // css 
 import '../CSS/LogoutButton.css';
-import { makeFavorites, makeEmail, makeExpired, makeName, makeSessionID, makeStatus, makeTimestamp } from "../utils/features/sessionSlice";
+import { makeFavorites, makeEmail, makeName, makeSessionID, makeStatus, makeTimestamp, makeFilteredSearch, makeFilteredSearchIDs } from "../utils/features/sessionSlice";
 
 
 const LogoutButton = () => {
@@ -33,9 +33,10 @@ const LogoutButton = () => {
                 dispatch(makeName(''))
                 dispatch(makeEmail(''))
                 dispatch(makeSessionID(''))
-                dispatch(makeExpired(true))
                 dispatch(makeTimestamp(0))
                 dispatch(makeStatus(false))
+                dispatch(makeFilteredSearch(false))
+                dispatch(makeFilteredSearchIDs([]))
                 window.alert('you have been signed out')
                 nav('/')
                 window.location.reload()

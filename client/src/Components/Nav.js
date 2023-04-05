@@ -25,7 +25,7 @@ const Nav = () => {
             </Link>
             <div className='Nav__navlinkContainer' style={{display: showNav ? 'flex' : 'none'}}>
                 <Link to='/account' id='navlink_account' className='navlinkContainer__navlink'>My Account</Link>
-                <Link to='/' id='navlink_filtersearch' className='navlinkContainer__navlink'>Filter Search</Link>
+                <Link to='/filter' id='navlink_filter' className='navlinkContainer__navlink'>Filter Search</Link>
             </div>
         </div>
     );

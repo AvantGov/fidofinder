@@ -10,7 +10,8 @@ export const sessionSlice = createSlice({
         email: '',
         status: false,
         favorites: [],
-        expired: false
+        filteredSearch: false,
+        filteredSearchIDs: []
     },
     reducers: {
         makeSessionID: (state, sessionID) => {
@@ -36,8 +37,11 @@ export const sessionSlice = createSlice({
         makeRemoveFavorite: (state, favorite) => {
             state.favorites.pop(favorite)
         },
-        makeExpired: (state,expired) => {
-            state.expired = expired
+        makeFilteredSearch: (state,filteredSearch) => {
+            state.filteredSearch = filteredSearch
+        },
+        makeFilteredSearchIDs: (state, filteredSearchIDs) => {
+            state.filteredSearchIDs = filteredSearchIDs
         }
 
     }
@@ -50,5 +54,6 @@ export const {makeTimestamp} = sessionSlice.actions
 export const {makeName} = sessionSlice.actions
 export const {makeEmail} = sessionSlice.actions
 export const {makeStatus} = sessionSlice.actions
-export const {makeExpired} = sessionSlice.actions
+export const {makeFilteredSearch} = sessionSlice.actions
+export const {makeFilteredSearchIDs} = sessionSlice.actions
 export default sessionSlice.reducer;
