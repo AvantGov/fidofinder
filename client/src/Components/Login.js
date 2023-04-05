@@ -10,7 +10,7 @@ import Welcome from './Welcome';
 import Loading from './Loading';
 
 // utils
-import { makeSessionID,makeTimestamp,makeEmail,makeName,makeStatus,makeAccountDetails } from '../utils/features/sessionSlice';
+import { makeSessionID,makeTimestamp,makeEmail,makeName,makeStatus,makeFavorites } from '../utils/features/sessionSlice';
 
 
 
@@ -57,18 +57,10 @@ const Login = () => {
 
     const handleNewSession = () => {
             dispatch(makeSessionID(controller.UUID))
-            dispatch(makeTimestamp(Date.now()))
+            dispatch(makeTimestamp(new Date().toString()))
             dispatch(makeEmail(controller.uin_email))
             dispatch(makeName(controller.uin_name))
-            dispatch(makeAccountDetails({
-                location: {
-                    zip_code: 0,
-                    latitude: 0,
-                    longitude: 0,
-                    city: '',
-                    state: '',
-                    county: '',
-                },
+            dispatch(makeFavorites({
                 favorites: []
             }))
             setTimeout(() => {dispatch(makeStatus(true))}, 1500)

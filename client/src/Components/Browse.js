@@ -1,8 +1,10 @@
 // depends
 import React, {useEffect, useRef} from "react";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
 import axios from 'axios'
+
+//utils
+import { makeFavorites, makeRemoveFavorite } from "../utils/features/sessionSlice";
 
 
 
@@ -14,12 +16,10 @@ import Loading from "./Loading";
 import '../CSS/Browse.css'
 
 
-const Browse = () => {
-    const session = useSelector(state => {return state.session})
-    const nav = useNavigate();
-    console.log('browse session reading session state ~/browse:', session)
 
-    
+const Browse = () => {
+    const dispatch = useDispatch();
+    // console.log('browse session reading session state ~/browse:', session)
     // ? can't use a controller here becuase it causes constant re-rending with useEffect 
     // ? (cause the controller changes, trigger UF, which changes the controller, which ...) so i had to make it a ref.
     var loadedData = useRef(false)
@@ -27,8 +27,43 @@ const Browse = () => {
     // ?
     var content = useRef([])
     var searchArr = useRef([])
-    
+    var local_favref = useRef([])
 
+    const navlink_account = document.getElementById('navlink_account')
+    const navlink_filtersearch = document.getElementById('navlink_filtersearch')
+    if (window.getComputedStyle(navlink_account).backgroundColor === 'rgb(216, 108, 100)') {
+        console.log('changing back')
+        navlink_account.style.backgroundColor = '#DADADA'
+        navlink_account.style.boxShadow = '0px 0px 5px 2px #DADADA'
+        navlink_account.style.color = '#1E2329'
+        navlink_account.onmouseover = () => {
+            navlink_account.style.backgroundColor = '#AD87A6'
+            navlink_account.style.color = '#DADADA'
+            navlink_account.style.boxShadow = '0px 0px 20px 2px #AD87A6'
+        }
+        navlink_account.onmouseout = () => {
+            navlink_account.style.backgroundColor = '#DADADA'
+            navlink_account.style.boxShadow = '0px 0px 5px 2px #DADADA'
+            navlink_account.style.color = '#1E2329'
+        }
+    }
+    if (window.getComputedStyle(navlink_filtersearch).backgroundColor === 'rgb(216, 108, 100)') {
+        console.log('changing back')
+        navlink_filtersearch.style.backgroundColor = '#DADADA'
+        navlink_filtersearch.style.boxShadow = '0px 0px 5px 2px #DADADA'
+        navlink_filtersearch.style.color = '#1E2329'
+        navlink_filtersearch.onmouseover = () => {
+            navlink_filtersearch.style.backgroundColor = '#AD87A6'
+            navlink_filtersearch.style.color = '#DADADA'
+            navlink_filtersearch.style.boxShadow = '0px 0px 20px 2px #AD87A6'
+        }
+        navlink_filtersearch.onmouseout = () => {
+            navlink_filtersearch.style.backgroundColor = '#DADADA'
+            navlink_filtersearch.style.boxShadow = '0px 0px 5px 2px #DADADA'
+            navlink_filtersearch.style.color = '#1E2329'
+        }
+        
+    }
 
     // used to fetch data then construct the elements that will hold the data, then injects.
     useEffect(() => {
@@ -74,7 +109,7 @@ const Browse = () => {
                         var wrapper = document.createElement('a')
                         wrapper.href = `/browse/${item.id}`
                         wrapper.className = 'Feed__cardWrapper'
-                        wrapper.id = 'linkwrap_Feed'
+                        wrapper.id = `linkwrap_Feed_${item.id}`
                         wrapper.addEventListener('click', (e) => {e.preventDefault()})
 
                         var card = document.createElement('div')
@@ -112,18 +147,28 @@ const Browse = () => {
                         breed.id = `breed_${item.id}`
                         breed.innerHTML = `Breed: ${item.breed}`
                         copycont.appendChild(breed)
+
                         // add age
                         var age = document.createElement('p')
                         age.className = 'card__age'
                         age.id = `age_${item.id}`
                         age.innerHTML = `Age: ${item.age}`
                         copycont.appendChild(age)
+
                         // add location   
                         var doglocation = document.createElement('p')
                         doglocation.className = 'card__doglocation'
                         doglocation.id = `doglocation_${item.id}`
                         doglocation.innerHTML = `Location: ${item.zip_code}`
                         copycont.appendChild(doglocation)
+
+                        // add select option for adding to favorites list 
+                        var favorite = document.createElement('button')
+                        favorite.className = 'card__favorite'
+                        favorite.id =`btn_favorite_${item.id}`
+                        favorite.innerHTML = "Add to Favorites"
+                        favorite.onclick = ()=> { handleAddFavorite(item.id) }
+                        card.appendChild(favorite)
 
                         wrapper.appendChild(card)
                         inj.appendChild(wrapper)
@@ -143,7 +188,27 @@ const Browse = () => {
                 })
             }
         },[1000])
-    },[loadedContent, loadedData])
+        
+        const handleAddFavorite = (dogid) => {
+            if (!local_favref.current.includes(dogid)) {
+                dispatch(makeFavorites(dogid))
+                local_favref.current.push(dogid)
+                const dogcard = document.getElementById(`linkwrap_Feed_${dogid}`)
+                dogcard.style.boxShadow = '0px 0px 2px 5px #E1AE5B'
+                const button = document.getElementById(`btn_favorite_${dogid}`)
+                button.innerHTML = 'Remove'
+            } else if (local_favref.current.includes(dogid)) {
+                if (window.confirm('do you really want to remove this dog from your favorites?')) {
+                    dispatch(makeRemoveFavorite(dogid))
+                    local_favref.current.pop(dogid)
+                    const dogcard = document.getElementById(`linkwrap_Feed_${dogid}`)
+                    dogcard.style.boxShadow = 'none'
+                    const button = document.getElementById(`btn_favorite_${dogid}`)
+                    button.innerHTML = 'Add to Favorites'
+                }
+            }
+        }
+    },[loadedContent, loadedData, dispatch])
 
     
     return(

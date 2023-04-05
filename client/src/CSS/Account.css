@@ -1,0 +1,81 @@
+.Account {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 5% 0 5% 3%;
+}
+
+.Account__profileContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: #DADADA;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.profileContainer__welcome {
+    font-size: 4rem;
+    font-weight: 900;
+    margin: 3% 0 2% 0;
+}
+
+.profileContainer__caption {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    width: 70%;
+    padding: 0 0 0 3%;
+}
+
+.profileContainer__metaContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: #DADADA;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0 0 0 3%;
+    margin: 3% 0 3% 0;
+}
+
+.metaContainer__title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 .5% 0;
+}
+
+.metaContainer__info {
+    font-size: 1.6rem;
+    padding: 0 0 0 3%;
+    margin: 0 0 .5% 0;
+}
+
+.Account__link {
+    height: 100%;
+    width: 90%;
+    padding: 10% 10% 10% 10%;
+    margin: 0 0 3% 0;
+    text-align: center;
+    font-size: 3.6rem;
+    text-decoration: none;
+    color: #DADADA;
+    background-color: #1E2329;
+    border-radius: 5px;
+    transition: .3s ease-in-out;
+    border: 2px solid #DADADA;
+}
+
+.Account__link:hover {
+    background-color: #D86C64;
+    box-shadow: 0px 0px 5px .2px inset #DADADA;
+    text-decoration: underline;
+}
+
+

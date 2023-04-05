@@ -1,5 +1,5 @@
 // * DEPENDS
-import React, {useEffect} from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -10,10 +10,13 @@ import Nav from './Components/Nav';
 import Browse from './Components/Browse';
 import ProtectedRoute from './utils/comps/ProtectedRoute';
 import LogoutButton from './Components/LogoutButton';
-
+import Account from './Components/Account';
+import FavoriteList from './Components/FavoriteList';
 
 // * CSS 
 import './CSS/App.css';
+
+
 
 function App() {
   var status = useSelector(state => {return state.session.status})
@@ -29,7 +32,18 @@ function App() {
             <Browse />
           </ProtectedRoute>
         }/>
-
+        <Route exact path='/account' element={
+          <ProtectedRoute status={status}>
+            <LogoutButton />
+            <Account />
+          </ProtectedRoute>
+        }/>
+        <Route exact path='/account/favorites' element={
+          <ProtectedRoute status={status}>
+            <LogoutButton />
+            <FavoriteList />
+          </ProtectedRoute>
+        }/>
         <Route path="*" element={<p>There's nothing here: 404!</p>} />
       </Routes>
     </div>  
