@@ -14,18 +14,15 @@ import Account from './Components/Account';
 import FavoriteList from './Components/FavoriteList';
 import Filter from './Components/Filter';
 import SortButton from './Components/SortButton';
+import Match from './Components/Match';
+
 
 // * CSS 
 import './CSS/App.css';
 
 
-
-
-
 function App() {
   var status = useSelector(state => {return state.session.status})
-
-
 
   return (
     <div className="App">
@@ -50,6 +47,11 @@ function App() {
             <LogoutButton />
             <SortButton />
             <FavoriteList />
+          </ProtectedRoute>
+        }/>
+        <Route exact path='/account/match' element={
+          <ProtectedRoute status={status}>
+            <Match />
           </ProtectedRoute>
         }/>
         <Route exact path='/filter' element={

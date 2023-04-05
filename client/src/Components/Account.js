@@ -34,7 +34,7 @@ const Account = () => {
                 </div>
             </div>
             {session.favorites.length > 1 ? <Link to='/account/favorites' className='Account__link'>View Favorites</Link> : null}
-            {session.favorites.length > 1 ? <Link to='/account/getMatch' className='Account__link'>Generate Match</Link> : null}
+            {session.favorites.length > 1 ? <Link to='/account/match' className='Account__link'>Generate Match</Link> : null}
             
         </div>
     );
