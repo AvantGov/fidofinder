@@ -47,7 +47,7 @@ const Login = () => {
             setTimeout(() => {nav('/browse')}, [2500])
         })
         .catch((err) => {
-            window.alert("login attempt failed, please try again.")
+            window.alert("login attempt failed, please try again.", err)
         })
     }
 
@@ -76,7 +76,7 @@ const Login = () => {
             <div className='Login_welcomeContainer' style={{height: '100%', width: '100%', display: controller.attempting ? "none" : 'flex'}}>
                 <Welcome />
             </div>
-            <p className='Login__caption' style={{display: controller.attempting ? 'none' : 'block'}}>Please login with the fields below.</p>
+            <p className='Login__caption' style={{display: controller.attempting ? 'none' : 'block'}}>Please login with the fields below:</p>
 
             <div className='Login__inputContainer'style={{display: controller.attempting ? 'none' : 'flex'}}>
                 <label className='inputContainer__label' id='lbl_loginname' htmlFor=''>Name:</label>

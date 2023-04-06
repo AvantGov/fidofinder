@@ -23,3 +23,14 @@
     margin: 1% 0 0 0;
     text-align: center;
 }
+
+@media only screen and (max-width: 800px) {
+    .Welcome__header {
+        font-size: 2.4rem;
+    }
+    
+    .Welcome__caption {
+        width: 90%;
+        margin: 3% 0 0 0;
+    }
+}
