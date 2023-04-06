@@ -95,7 +95,39 @@
 }
 
 #btn_favorite:hover {
-    border: 2px solid #AD87A6;
+    border-left: 2px solid #AD87A6;
     background-color: #DADADA;
     color: #AD87A6;
+}
+
+@media only screen and (max-width: 800px) {
+    .Feed__card {
+        flex-direction: column;
+        padding-top: 7%;
+        margin-bottom: 5%;
+    }
+    .card__image {
+        width: 100%;
+        margin-bottom: 7%;
+    }
+    .card__copycont {
+        border-top: 7px solid #6296A4;
+        border-left: none;
+        padding-top: 5%;
+        margin-bottom: 5%;
+    }
+    .card__favorite {
+        width: 60%;
+        
+    }
+    #btn_favorite:hover {
+        border-top: 2px solid #AD87A6;
+        border-left: none;
+        background-color: #DADADA;
+        color: #AD87A6;
+    }
+    .Feed__cardWrapper:hover > div > div {
+        border-top: 7px solid #AD87A6;
+        border-left: none;
+    }
 }

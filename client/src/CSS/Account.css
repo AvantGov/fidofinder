@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    padding: 5% 0 5% 3%;
+    padding: 7% 0 7% 3%;
 }
 
 .Account__profileContainer {
@@ -78,4 +78,14 @@
     text-decoration: underline;
 }
 
-
+@media only screen and (max-width: 800px) {
+    .profileContainer__welcome {
+        font-size: 2.8rem;
+        line-height: 3.2rem;
+        margin-bottom: 7%;
+    }
+    .profileContainer__caption {
+        width: 90%;
+        margin: 9% 0 9% 3%;
+    }
+}

@@ -131,7 +131,7 @@ const FavoriteList = () => {
         <div className="FavoriteList">
             <div className="FavoriteList__welcomeContainer">
                 <h1 className="welcomeContainer__title">Favorites</h1>
-                <p className="welcomeContainer__caption">Below is a list of the dogs that you have saved as your favorites. <br/><br /> They will not appear in searches.</p>
+                <p className="welcomeContainer__caption">Below is a list of the dogs that you have saved as your favorites.</p>
             </div>
             <div className="FavoriteList__loadingContainer" id='load_favelist'>
                 <Loading />

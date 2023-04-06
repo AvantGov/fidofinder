@@ -46,7 +46,7 @@ const Match = () => {
                 var match = document.getElementById('cont_match')
                 var loading = document.getElementById('cont_matchloading')
 
-                if (!document.getElementById(`img_${dog.id}`)) {
+                if (document.getElementById('cont_match').childElementCount < 2) {
                 // add image 
                 var img = document.createElement('img')
                 img.className = 'match__image'
@@ -96,13 +96,15 @@ const Match = () => {
                 // show and hide 
                 match.style.display = 'flex'
                 loading.style.display = 'none'
+                } else {
+                    return null
                 }
             })
             .catch((err) => {
                 console.log('match error:', err)
                     window.alert('there was an issue getting your match. aborting application.')
-                    window.location.reload()
-                    nav('/')
+                    // window.location.reload()
+                    // nav('/')
             })
         }
     },[favorites, nav])

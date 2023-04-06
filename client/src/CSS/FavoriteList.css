@@ -114,3 +114,43 @@
     font-size: 2rem;
     margin: 0 0 2% 3%;
 }
+
+@media only screen and (max-width: 800px) {
+    .welcomeContainer__title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+    .welcomeContainer__caption {
+        margin-bottom: 5%;
+    }
+    .FaveList__card {
+        flex-direction: column;
+        padding-top: 7%;
+        margin-bottom: 5%;
+    }
+    .card__image_f {
+        width: 100%;
+        margin-bottom: 7%;
+    }
+    .card__copycont_f {
+        border-top: 7px solid #6296A4;
+        border-left: none;
+        padding-top: 5%;
+        margin-bottom: 5%;
+    }
+    .card__favorite_f {
+        width: 60%;
+        
+    }
+    #btn_favorite:hover {
+        border-top: 2px solid #AD87A6;
+        border-left: none;
+        background-color: #DADADA;
+        color: #AD87A6;
+    }
+    .FaveList__cardWrapper:hover > div > div {
+        border-top: 7px solid #AD87A6;
+        border-left: none;
+    }
+}

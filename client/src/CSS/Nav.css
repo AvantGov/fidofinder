@@ -70,6 +70,11 @@
 }
 
 @media only screen and (max-width: 800px) {
-
+    .navlinkContainer__navlink {
+        font-size: 2rem;
+    }
+    .logoContainer__name {
+        font-size: 3rem;
+    }
 }
 
