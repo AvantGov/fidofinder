@@ -17,7 +17,7 @@ yarn start
 4. application will open in default browser selection
 
 ## workflow + UX 
-When the user first opens the application they will be met with default search results. This is 25 results, with no breed or age filtering applied. The list is scrollable. With each result displayed, there is the option to favorite the result. Tapping the button again will prompt the user with a dialog that confirms they wish to remove the dog from their favorites selection. When a dog is added to the favorites list, their result in that search (and other searches**) will be given a yellow border to signified they are a part of the favorites list. 
+When the user first opens the application they will be met with default search results. This is 25 results, with no breed or age filtering applied. The list is scrollable. With each result displayed, there is the option to favorite the result. Tapping the button again will prompt the user with a dialog that confirms they wish to remove the dog from their favorites selection. When a dog is added to the favorites list, their result in that search (and other searches**) will be given a yellow border to signify they are a part of the favorites list. 
 
 The user can navigate to the filtered search page to perform a new search with filtered results. if no filter params are changed, a default search (identical to the initial page load after login) will be performed and presented to the user. 
 
