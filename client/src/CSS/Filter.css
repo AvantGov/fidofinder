@@ -1,0 +1,93 @@
+.Filter {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Filter__titleContainer {
+    height: 100%;
+    width: 70%;
+    padding: 2% 0 2% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.titleContainer__title {
+    font-size: 5rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #DADADA;
+    margin: 2% 0 1% 0;
+}
+
+.titleContainer__caption {
+    font-size: 2rem;
+    color: #DADADA;
+    margin: 0 0 5% 0;
+}
+
+.Filter__form  {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.form__label {
+    color: #DADADA;
+    font-size: 2rem;
+    line-height: 2.4rem;
+    margin: 0 0 1.5% 0;
+    text-align: center;
+}
+
+.form__input {
+    height: 100%;
+    width: 40%;
+    padding: 1.25% 1% 1% 1%;
+    margin: 0 0 5% 3%;
+}
+
+.form__select {
+    height: 100%;
+    width: 40%;
+    padding: 1.25% 1% 1% 1%;
+    margin: 0 0 5% 3%;
+}
+
+.form__errors {
+    height: 100%;
+    width: 80%;
+    padding: 3.5% 2% 3% 3%;
+    margin: 3% 0 5% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid #F20000;
+    background-color: #FFFFFF;
+    border-radius: 50px;
+}
+
+.errors__dialog {
+    font-size: 2rem;
+    color: #F20000;
+    font-weight: 800;
+    margin: 0 0 3% 0;
+    text-align: center;
+}
+
+.form__error {
+    font-size: 1.6rem;
+    color: #F20000;
+    font-weight: 600;
+    margin: 1% 0 2% 0;
+    text-align: center;
+}

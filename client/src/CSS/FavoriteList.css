@@ -1,0 +1,156 @@
+.FavoriteList {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.FavoriteList__welcomeContainer {
+    height: 100%;
+    width: 100%;
+    margin: 3% 0 3% 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center; 
+}
+
+.welcomeContainer__title {
+    font-size: 6rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    width: 30%;
+    height: 100%;
+    margin: 1% 0 2% 0;
+    color: #DADADA;
+    text-align: center;
+}
+
+.welcomeContainer__caption {
+    font-size: 2rem;
+    color: #DADADA;
+}
+
+
+.FavoriteList__loadingContainer {
+    height: 100%;
+    width: 100%;
+}
+
+.FavoriteList__listContainer {
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.FaveList__cardWrapper {
+    height: 100%;
+    width: 95%;
+    text-decoration: none;
+    color: #1E2329;
+    background-color: #DADADA;
+    margin: 1.5% .25% 1.5% .25%;
+    border-radius: 5px;
+    transition: .3s ease-in-out;
+}
+
+.FaveList__cardWrapper:hover {
+    background-color: #1E2329;
+    color: #DADADA;
+}
+
+.FaveList__cardWrapper:hover > div > div {
+    border-left: 7px solid #AD87A6;
+}
+
+.FaveList__cardWrapper:hover > div > button {
+    background-color: #AD87A6;
+}
+
+.FaveList__card {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 3%;
+}
+
+.card__copycont_f {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    border-left: 7px solid #6296A4;
+    padding: 2% 2% 2% 2%;
+}
+
+.card__name_f {
+    font-size: 3.6rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    margin: 0 0 3% 0;
+}
+
+.card__breed_f {
+    font-size: 2rem;
+    margin: 0 0 2% 3%;
+}
+
+.card__age_f {
+    font-size: 2rem;
+    margin: 0 0 2% 3%;
+}
+
+.card__doglocation_f {
+    font-size: 2rem;
+    margin: 0 0 2% 3%;
+}
+
+@media only screen and (max-width: 800px) {
+    .welcomeContainer__title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+    .welcomeContainer__caption {
+        margin-bottom: 5%;
+    }
+    .FaveList__card {
+        flex-direction: column;
+        padding-top: 7%;
+        margin-bottom: 5%;
+    }
+    .card__image_f {
+        width: 100%;
+        margin-bottom: 7%;
+    }
+    .card__copycont_f {
+        border-top: 7px solid #6296A4;
+        border-left: none;
+        padding-top: 5%;
+        margin-bottom: 5%;
+    }
+    .card__favorite_f {
+        width: 60%;
+        
+    }
+    #btn_favorite:hover {
+        border-top: 2px solid #AD87A6;
+        border-left: none;
+        background-color: #DADADA;
+        color: #AD87A6;
+    }
+    .FaveList__cardWrapper:hover > div > div {
+        border-top: 7px solid #AD87A6;
+        border-left: none;
+    }
+}

@@ -1,0 +1,36 @@
+.Welcome {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5% 0 9% 0;
+}
+
+.Welcome__header {
+    color: #DADADA;
+    font-size: 5rem;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.Welcome__caption {
+    color: #DADADA;
+    font-size: 2rem;
+    height: 100%;
+    width: 50%;
+    margin: 1% 0 0 0;
+    text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .Welcome__header {
+        font-size: 2.4rem;
+    }
+    
+    .Welcome__caption {
+        width: 90%;
+        margin: 3% 0 0 0;
+    }
+}
