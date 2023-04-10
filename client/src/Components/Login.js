@@ -87,7 +87,7 @@ const Login = () => {
                 <input name='login_email' className='inputContainer__input' id='inp_loginemail' type='text' pattern='/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/' placeholder='john@appleseed.com' onChange={(e) => {setController({...controller, uin_email: e.target.value})}} />
             </div>
 
-            <button className='Login__submit' id='btn_loginsubmit' onClick={() => {handleLoginAttempt()}} style={{display: controller.attempting ? 'none' : 'block'}}>Login</button>
+            <button className='Login__submit' id='btn_loginsubmit' testId='btn_loginsubmit' onClick={() => {handleLoginAttempt()}} style={{display: controller.attempting ? 'none' : 'block'}}>Login</button>
         </div>
     );
 };
