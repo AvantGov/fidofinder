@@ -86,5 +86,5 @@ Warning: #E1AE5B
 ### Futured Plans: 
 - in the case of pages where lists are paginated after and axios call, creation of the list and children elements are written in line. It would be possible to create utility files that serve the purpose of these inline methods. While developing I found that useRefs were not high enough of a priority to cause re-render (could not control logic in JSX return) and useState controllers were TOO high, and caused endless re-render loops that failed out. Writing these methods in line proved to be the most stable option for this use case, at the expense of readibility + modularity. (sorry) 
 
-- more expansive tesing program. will need to create apadtor files for React Router, Axios, and Redux to thoroughly account for all corners of application behavior. Currently, testing program checks for inital render success based on the Welcome component.
+- more expansive tesing program. will need to create adaptor files for React Router, Axios, and Redux to thoroughly account for all corners of application behavior. Currently, testing program checks for inital render success based on the Welcome component.
 
