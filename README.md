@@ -1,7 +1,7 @@
 # fidofinder
 
 ## What is it? 
-fidofinder is an application that allows users to view filtered lists of dogs, select their favorites, and the generate a match based on their selections. 
+fidofinder is an application that allows users to view filtered lists of dogs, select their favorites, and the generate a match based on their selections. This application must be run in a chrome browser on a desktop.
 
 ## running locally 
 1. clone the main branch of this repository to a location on your machine. 
