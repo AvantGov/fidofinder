@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 // * comps
 import Login from './Components/Login';
 import Nav from './Components/Nav';
-import Browse from './Components/Browse';
+import Browse_2 from './Components/Browse_2';
 import ProtectedRoute from './utils/comps/ProtectedRoute';
 import LogoutButton from './Components/LogoutButton';
 import Account from './Components/Account';
@@ -33,7 +33,7 @@ function App() {
           <ProtectedRoute status={status}>
             <LogoutButton />
             <SortButton />
-            <Browse />
+            <Browse_2 />
           </ProtectedRoute>
         }/>
         <Route exact path='/account' element={

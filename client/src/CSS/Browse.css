@@ -2,7 +2,6 @@
     height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 }
@@ -10,14 +9,21 @@
 .Browse__Feed {
     height: 100%;
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.Feed__cardWrapper {
+
+.Feed__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1%;
     height: 100%;
-    width: 95%;
+    width: 300px;
     text-decoration: none;
     color: #1E2329;
     background-color: #DADADA;
@@ -26,65 +32,56 @@
     transition: .3s ease-in-out;
 }
 
-.Feed__cardWrapper:hover {
-    background-color: #1E2329;
-    color: #DADADA;
+.card__image {
+    border: 12px solid #FFFFFF;
 }
 
-.Feed__cardWrapper:hover > div > div {
-    border-left: 7px solid #AD87A6;
-}
-
-.Feed__cardWrapper:hover > div > button {
-    background-color: #AD87A6;
-}
-
-.Feed__card {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 3%;
-}
 
 .card__copycont {
-    width: 50%;
+    width: 90%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-around;
-    border-left: 7px solid #6296A4;
-    padding: 2% 2% 2% 2%;
+    padding: 2% 0 2% 2%;
+    margin: 3% 0 3% 0;
 }
 
 .card__name {
-    font-size: 3.6rem;
+    font-size: 2.8rem;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 800;
     margin: 0 0 3% 0;
+    text-align: center;
+    width: 100%;
 }
 
 .card__breed {
-    font-size: 2rem;
-    margin: 0 0 2% 3%;
+    font-size: 1.6rem;
+    margin: 0 0 3% 0;
+    text-align: center;
+    width: 100%;
+    color: #AD87A6;
 }
 
 .card__age {
-    font-size: 2rem;
-    margin: 0 0 2% 3%;
+    font-size: 1.6rem;
+    margin: 0 0 3% 0;
+    text-align: center;
+    width: 100%;
 }
 
 .card__doglocation {
-    font-size: 2rem;
-    margin: 0 0 2% 3%;
+    font-size: 1.6rem;
+    margin: 0 0 3% 0;
+    text-align: center;
+    width: 100%;
 }
 
 .card__favorite {
     height: 50px;
-    width: 15%;
+    width: 100%;
     background-color: #6296A4;
     border-radius: 25px;
     border: 2px solid #DADADA;
@@ -92,12 +89,13 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 800;
     transition: .3s ease-in-out;
+    margin: 7% 0 0 0;
 }
 
-#btn_favorite:hover {
-    border-left: 2px solid #AD87A6;
-    background-color: #DADADA;
-    color: #AD87A6;
+.card__favorite:hover {
+    background-color: #AD87A6;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
 }
 
 @media only screen and (max-width: 800px) {
